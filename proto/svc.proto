@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+option go_package = "github.com/myuser/myrepo";
+
+message DeleteFooRequest {
+  string foo_id = 1;
+  optional bool soft_delete = 2;
+}
+
+service ProductService {
+
+  rpc DeleteFoo(DeleteFooRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/foo/{foo_id}"
+    };
+  }
+
+}

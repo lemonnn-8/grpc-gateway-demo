@@ -1,0 +1,4 @@
+version: v2
+name: github.com/myuser/myrepo
+deps:
+  - buf.build/googleapis/googleapis
